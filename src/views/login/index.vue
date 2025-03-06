@@ -7,9 +7,7 @@
 
       <el-form-item prop="username">
         <span class="svg-container">
-          <span class="svg-container">
-            <svg-icon icon="user" />
-          </span>
+          <svg-icon icon="user" />
         </span>
         <el-input placeholder="username" name="username" type="text" />
       </el-form-item>
