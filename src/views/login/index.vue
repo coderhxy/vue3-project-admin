@@ -7,24 +7,20 @@
 
       <el-form-item prop="username">
         <span class="svg-container">
-          <el-icon>
-            <avatar />
-          </el-icon>
+          <span class="svg-container">
+            <svg-icon icon="user" />
+          </span>
         </span>
         <el-input placeholder="username" name="username" type="text" />
       </el-form-item>
 
       <el-form-item prop="password">
         <span class="svg-container">
-          <el-icon>
-            <avatar />
-          </el-icon>
+          <svg-icon icon="password" />
         </span>
         <el-input placeholder="password" name="password" />
         <span class="show-pwd">
-          <el-icon>
-            <avatar />
-          </el-icon>
+          <svg-icon icon="eye" />
         </span>
       </el-form-item>
 
@@ -37,6 +33,7 @@
 
 <script setup>
 import {} from 'vue'
+import SvgIcon from '@/components/SvgIcon'
 </script>
 
 <style lang="scss" scoped>
