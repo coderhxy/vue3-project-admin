@@ -11,7 +11,7 @@ const publicRoutes = [
   },
   {
     path: '/',
-    redirect: '/login'
+    component: () => import('@/layout/index')
   }
 ]
 
