@@ -3,7 +3,7 @@ import md5 from 'md5'
 import { setItem, getItem, removeAllItem } from '@/utils/storage'
 import { TOKEN } from '@/constant'
 import router from '@/router'
-import { setTimeStamp } from '@/utils/auth'
+import { setTimeStamp } from '@/utils/auth.js'
 export default {
   namespaced: true,
   state: () => ({
