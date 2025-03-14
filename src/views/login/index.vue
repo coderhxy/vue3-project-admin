@@ -56,6 +56,7 @@ import { ref } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+// import { getUserInfo } from '@/api/sys'
 
 // 数据源
 const loginForm = ref({
@@ -115,6 +116,7 @@ const handleLogin = () => {
 
   // 排查问题，loginFromRef.value 是一个null 值
   // console.log(loginFromRef.value.validate)
+  // console.log(getUserInfo())
 }
 </script>
 

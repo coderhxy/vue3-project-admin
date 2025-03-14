@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path-browserify')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -37,6 +37,13 @@ module.exports = defineConfig({
         // 要代理的服务器地址  这里不用写 api
         target: 'https://api.imooc-admin.lgdsunday.club/',
         changeOrigin: true // 是否跨域
+      }
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      fallback: {
+        path: require.resolve('path-browserify')
       }
     }
   }
