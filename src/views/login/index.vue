@@ -7,7 +7,8 @@
       ref="loginFromRef"
     >
       <div class="title-container">
-        <h3 class="title">用户登录</h3>
+        <h3 class="title">{{ $t('msg.login.title') }}</h3>
+        <lang-select class="lang-select" effect="light"></lang-select>
       </div>
 
       <el-form-item prop="username">
@@ -45,18 +46,22 @@
         style="width: 100%; margin-bottom: 30px"
         :loading="loading"
         @click="handleLogin"
-        >登录</el-button
+        >{{ $t('msg.login.loginBtn') }}</el-button
       >
     </el-form>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+// 测试使用
 // import { getUserInfo } from '@/api/sys'
+import { useI18n } from 'vue-i18n'
+import LangSelect from '@/components/LangSelect/index.vue'
+// import { watchSwitchLang } from '@/utils/i18n.js'
 
 // 数据源
 const loginForm = ref({
@@ -64,12 +69,13 @@ const loginForm = ref({
   password: '123456'
 })
 // 验证规则
+const i18n = useI18n()
 const loginRules = ref({
   username: [
     {
       required: true,
       trigger: 'blur',
-      message: '用户名为必填项'
+      message: computed(() => i18n.t('msg.login.usernameRule'))
     }
   ],
   password: [
@@ -80,6 +86,9 @@ const loginRules = ref({
     }
   ]
 })
+// watchSwitchLang(() => {
+//   loginFromRef.value.validate()
+// })
 
 // 处理密码框文本显示状态
 const passwordType = ref('password')
@@ -183,6 +192,17 @@ $cursor: #fff;
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
+    }
+
+    ::v-deep .lang-select {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      background-color: white;
+      font-size: 22px;
+      padding: 4px;
+      border-radius: 4px;
+      cursor: pointer;
     }
   }
 
