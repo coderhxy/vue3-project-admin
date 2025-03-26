@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 // i18n （PS：导入放到 APP.vue 导入之前，因为后面我们会在 app.vue 中使用国际化内容）
-import i18n from '@/i18n'
+import i18n from '@/i18n/index.js'
 import App from './App.vue'
 import router from './router'
 import store from './store'
